@@ -11,7 +11,7 @@ class MapCircles extends StatefulWidget {
 
 class _MapCirclesState extends State<MapCircles> {
   GoogleMapController? _controller;
-  final Set<Circle> _circles = Set<Circle>();
+  final Set<Circle> _circles = <Circle>{};
 
   static const CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(0.347596, 32.582520),

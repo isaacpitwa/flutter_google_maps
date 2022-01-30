@@ -15,8 +15,8 @@ class FindFriends extends StatefulWidget {
 }
 
 class _FindFriendsState extends State<FindFriends> {
-  static final CameraPosition _kGooglePlex =   CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+  static const CameraPosition _kGooglePlex =   CameraPosition(
+    target:  LatLng(0.347596, 32.582520),
     zoom: 14.4746,
   );
 
