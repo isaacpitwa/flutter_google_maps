@@ -32,19 +32,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   GoogleMapController? _controller;
 
-  static final CameraPosition _kGooglePlex = CameraPosition(
+  static final CameraPosition _kGooglePlex = const CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.4746,
   );
 
-   Map<String, Marker> _markers = {};
+   final Map<String, Marker> _markers = {};
   Map<CircleId, Circle> circles = <CircleId, Circle>{};
 
   CircleId? selectedCircle;
-   CustomInfoWindowController _customInfoWindowController =
+   final CustomInfoWindowController _customInfoWindowController =
       CustomInfoWindowController();
 
-   List<dynamic> _mapThemes = [
+   final List<dynamic> _mapThemes = [
     {
       'name': 'Standard',
       'style': MapStyle().dark,
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                     Stack(
                       children: [
                         Container(
-                          padding: EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(15.0),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.0),
                             color: Colors.white,
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
+                              SizedBox(
                                 width: double.infinity,
                                 height: 130,
                                 child: ClipRRect(
@@ -130,11 +130,11 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 15,),
-                              Text("Grand Teton National Park", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 15,),
+                              const Text("Grand Teton National Park", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),),
+                              const SizedBox(height: 5,),
                               Text("Grand Teton National Park on the east side of the Teton Range is renowned for great hiking trails with stunning views of the Teton Range.", style: TextStyle(color: Colors.grey.shade600, fontSize: 12),),
-                              SizedBox(height: 8,),
+                              const SizedBox(height: 8,),
                               MaterialButton(
                                 onPressed: () {},
                                 elevation: 0,
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                child: Text("See details", style: TextStyle(color: Colors.black),),
+                                child: const Text("See details", style: TextStyle(color: Colors.black),),
                               )
                             ],
                           ),
@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                           top: 5.0,
                           left: 5.0,
                           child: IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.close,
                               color: Colors.white,
                             ),
@@ -207,22 +207,22 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       _controller?.animateCamera(CameraUpdate.zoomIn());
                     },
-                    padding: EdgeInsets.all(0),
+                    padding: const EdgeInsets.all(0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Icon(Icons.add, size: 25),
+                    child: const Icon(Icons.add, size: 25),
                   ),
-                  Divider(height: 5),
+                  const Divider(height: 5),
                   MaterialButton(
                     onPressed: () {
                       _controller?.animateCamera(CameraUpdate.zoomOut());
                     },
-                    padding: EdgeInsets.all(0),
+                    padding: const EdgeInsets.all(0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Icon(Icons.remove, size: 25),
+                    child: const Icon(Icons.remove, size: 25),
                   )
                 ],
               )
@@ -246,15 +246,15 @@ class _HomePageState extends State<HomePage> {
                       showModalBottomSheet(
                         context: context,
                         builder: (context) => Container(
-                          padding: EdgeInsets.all(20),
+                          padding: const EdgeInsets.all(20),
                           color: Colors.white,
                           height: MediaQuery.of(context).size.height * 0.3,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Select Theme", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 18),),
-                              SizedBox(height: 20,),
-                              Container(
+                              const Text("Select Theme", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 18),),
+                              const SizedBox(height: 20,),
+                              SizedBox(
                                 width: double.infinity,
                                 height: 100,
                                 child: ListView.builder(
@@ -268,7 +268,7 @@ class _HomePageState extends State<HomePage> {
                                       },
                                       child: Container(
                                         width: 100,
-                                        margin: EdgeInsets.only(right: 10),
+                                        margin: const EdgeInsets.only(right: 10),
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(10),
                                           image: DecorationImage(
@@ -286,11 +286,11 @@ class _HomePageState extends State<HomePage> {
                         ),
                       );
                     },
-                    padding: EdgeInsets.all(0),
+                    padding: const EdgeInsets.all(0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Icon(Icons.layers_rounded, size: 25),
+                    child: const Icon(Icons.layers_rounded, size: 25),
                   ),
                 ],
               )
