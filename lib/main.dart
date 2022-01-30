@@ -3,6 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:custom_info_window/custom_info_window.dart';
 
 import 'models/map_style.dart';
+import 'pages/find_friends.dart';
 import 'pages/map_circles.dart';
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MapCircles(),
+      home: const FindFriends(),
     );
   }
 }
@@ -33,8 +34,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   GoogleMapController? _controller;
 
-  static final CameraPosition _kGooglePlex = const CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+  static const CameraPosition _kGooglePlex =  CameraPosition(
+    target: LatLng(0.347596, 32.582520),
     zoom: 14.4746,
   );
 

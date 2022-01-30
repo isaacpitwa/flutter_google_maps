@@ -14,7 +14,7 @@ class _MapCirclesState extends State<MapCircles> {
   final Set<Circle> _circles = Set<Circle>();
 
   static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+    target: LatLng(0.347596, 32.582520),
     zoom: 14.4746,
   );
   
